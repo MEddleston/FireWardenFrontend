@@ -10,15 +10,19 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(`https://${process.env.REACT_APP_API_URL}/api/login`, { email, password });
-      localStorage.setItem("user", JSON.stringify(response.data));
-      response.data.role === "admin" ? navigate("/admin") : navigate("/warden");
-    } catch (error) {
-      alert("Invalid credentials");
-    }
-  };
+  e.preventDefault();
+  try {
+    const response = await axios.post(
+      `${process.env.REACT_APP_API_URL}/api/login`,
+      { email, password }
+    );
+    localStorage.setItem("user", JSON.stringify(response.data));
+    response.data.role === "admin" ? navigate("/admin") : navigate("/warden");
+  } catch (error) {
+    alert("Invalid credentials");
+  }
+};
+
 
   return (
     <div className="login-page">
