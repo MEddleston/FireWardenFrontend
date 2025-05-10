@@ -16,7 +16,7 @@ function AllWardenEntries() {
 
   useEffect(() => {
     axios
-      .get('${process.env.REACT_APP_API_URL}/api/wardens/warden')
+      .get(`${process.env.REACT_APP_API_URL}/api/wardens/warden`)
       .then((response) => {
         const uniqueWardens = [...new Map(response.data.map(entry => [entry.staff_number, entry])).values()];
         setWardens(uniqueWardens);

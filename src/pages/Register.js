@@ -18,7 +18,7 @@ const Register = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post("${process.env.REACT_APP_API_URL}/api/fire-wardens", formData);
+        await axios.post(`${process.env.REACT_APP_API_URL}/api/fire-wardens`, formData);
         alert("Fire Warden Registered!");
     };
 

@@ -100,7 +100,7 @@ function AdminDashboard() {
 
   useEffect(() => {
     axios
-      .get("${process.env.REACT_APP_API_URL}/api/fire-wardens")
+      .get(`${process.env.REACT_APP_API_URL}/api/fire-wardens`)
       .then((response) => {
         const data = response.data;
         setWardens(data);

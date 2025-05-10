@@ -127,7 +127,7 @@ useEffect(() => {
     e?.preventDefault();
     const locName = locOverride || location;
     if (!locName) return;
-    await axios.post("${process.env.REACT_APP_API_URL}/api/fire-wardens", {
+    await axios.post(`${process.env.REACT_APP_API_URL}/api/fire-wardens`, {
       staff_number: user.staff_number,
       first_name: user.first_name,
       last_name: user.last_name,
@@ -136,7 +136,7 @@ useEffect(() => {
     setLocation("");
     setSelectedPin(null);
     fetchEntries();
-    axios.get("${process.env.REACT_APP_API_URL}/api/fire-wardens").then((res) => setAllEntries(res.data));
+    axios.get(`${process.env.REACT_APP_API_URL}/api/fire-wardens`).then((res) => setAllEntries(res.data));
   };
 
   const handleLogout = () => {

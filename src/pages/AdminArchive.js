@@ -13,7 +13,7 @@ function ArchivePage() {
 
   useEffect(() => {
     axios
-      .get("${process.env.REACT_APP_API_URL}/api/fire-wardens-log")
+      .get(`${process.env.REACT_APP_API_URL}/api/fire-wardens-log`)
       .then((res) => setArchiveEntries(res.data))
       .catch((err) => console.error("Error fetching archive entries:", err));
   }, []);

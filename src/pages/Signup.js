@@ -21,7 +21,7 @@ function Signup() {
     }
 
     try {
-      await axios.post("${process.env.REACT_APP_API_URL}/api/signup", {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/signup`, {
         email,
         first_name,
         last_name,
