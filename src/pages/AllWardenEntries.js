@@ -16,7 +16,7 @@ function AllWardenEntries() {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/wardens/warden`)
+      .get(`https://${process.env.REACT_APP_API_URL}/api/wardens/warden`)
       .then((response) => {
         const uniqueWardens = [...new Map(response.data.map(entry => [entry.staff_number, entry])).values()];
         setWardens(uniqueWardens);
@@ -29,7 +29,7 @@ function AllWardenEntries() {
     setSelectedWarden(staffNumber);
     if (staffNumber) {
       axios
-        .get(`${process.env.REACT_APP_API_URL}/api/fire-wardens/${staffNumber}`)
+        .get(`https://${process.env.REACT_APP_API_URL}/api/fire-wardens/${staffNumber}`)
         .then((response) => setEntries(response.data))
         .catch((error) => console.error(error));
     } else {

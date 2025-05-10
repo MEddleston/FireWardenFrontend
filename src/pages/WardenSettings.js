@@ -72,7 +72,7 @@ function WardenSettings() {
           return;
         }
 
-        await axios.put(`${process.env.REACT_APP_API_URL}/api/update-password`, {
+        await axios.put(`https://${process.env.REACT_APP_API_URL}/api/update-password`, {
           staff_number: user.staff_number,
           new_password: newPass
         });
@@ -85,7 +85,7 @@ function WardenSettings() {
         }
 
         const updatedValue = formData[editingField].trim();
-        await axios.put(`${process.env.REACT_APP_API_URL}/api/update-user`, {
+        await axios.put(`https://${process.env.REACT_APP_API_URL}/api/update-user`, {
           staff_number: user.staff_number,
           last_name: user.last_name,
           [editingField]: updatedValue
@@ -102,7 +102,7 @@ function WardenSettings() {
         }
 
         const updatedValue = formData[editingField].trim();
-        await axios.put(`${process.env.REACT_APP_API_URL}/api/update-user`, {
+        await axios.put(`https://${process.env.REACT_APP_API_URL}/api/update-user`, {
           staff_number: user.staff_number,
           first_name: user.first_name,
           [editingField]: updatedValue
